@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css'; 
+import { initTarefas } from './tarefas.js';
 
 //agendamentos.js
 import { initAgendamentos } from './agendamentos.js';
@@ -25,6 +26,7 @@ root.innerHTML = /*html*/`
       <li class="nav-item"><a class="nav-link" href="#" id="linkDashboard">Dashboard</a></li>
       <li class="nav-item"><a class="nav-link" href="#" id="linkAgendamentos">Agendamentos</a></li>
       <li class="nav-item"><a class="nav-link" href="#" id="linkUsuarios">Usuários</a></li>
+      <li class="nav-item"><a class="nav-link" href="#" id="linkTarefas">Tarefas</a></li>
     </ul>
   </div>
 </nav>
@@ -74,6 +76,13 @@ const data_info = {
   cancelado: 30,
   users: 2000
 };
+
+const linkTarefas = document.getElementById('linkTarefas');
+linkTarefas.addEventListener('click', (e) => {
+  e.preventDefault();
+  initTarefas();
+});
+
 function carregarDashboard() {
   const main = document.getElementById('conteudoPrincipal');
   main.innerHTML = /*html*/`
